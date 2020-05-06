@@ -18,8 +18,4 @@ RUN npm install --silent
 # add app
 COPY . ./
 
-ENV PORT 80
-
-EXPOSE 80
-
 CMD ["nodemon", "index.js"]
