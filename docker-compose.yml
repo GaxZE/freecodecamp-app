@@ -25,7 +25,7 @@ services:
       - "/app/node_modules"
     tty: true
     stdin_open: true
-  worker:
+  api:
     container_name: api
     build:
       context: ./api
