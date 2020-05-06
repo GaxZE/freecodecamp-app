@@ -1,6 +1,6 @@
 const fetch = require("node-fetch");
 const redis = require("redis");
-const client = redis.createClient();
+const client = redis.createClient(6379, "redis");
 
 const { promisify } = require("util");
 // const getAsync = promisify(client.get).bind(client);
