@@ -25,6 +25,18 @@ services:
       - "/app/node_modules"
     tty: true
     stdin_open: true
+  worker:
+    container_name: api
+    build:
+      context: ./api
+      dockerfile: Dockerfile
+    volumes:
+      - "./api:/app"
+      - "/app/node_modules"
+    ports:
+      - "5000:5000"
+    tty: true
+    stdin_open: true
   redis:
     image: redis:alpine
     container_name: redis
