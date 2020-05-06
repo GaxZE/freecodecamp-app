@@ -2,6 +2,7 @@ version: "3.7"
 
 services:
   client:
+    container_name: client
     build:
       context: ./client
       dockerfile: Dockerfile
@@ -14,9 +15,8 @@ services:
       - CHOKIDAR_USEPOLLING=true
     tty: true
     stdin_open: true
-    networks:
-      - front-tier
   worker:
+    container_name: worker
     build:
       context: ./worker
       dockerfile: Dockerfile
@@ -27,16 +27,6 @@ services:
       - "5001:80"
     tty: true
     stdin_open: true
-    networks:
-      - back-tier
   redis:
     image: redis:alpine
     container_name: redis
-    ports:
-      - "6379:6379"
-    networks:
-      - back-tier
-
-networks:
-  front-tier:
-  back-tier:
