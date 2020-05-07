@@ -5,6 +5,7 @@ export default function Job({ job }) {
     <div className={"job"}>
       <span>{job.title}</span>
       <span>{job.company}</span>
+      <span>{job.location}</span>
     </div>
   );
 }

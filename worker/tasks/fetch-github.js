@@ -3,7 +3,6 @@ const redis = require("redis");
 const client = redis.createClient(6379, "redis");
 
 const { promisify } = require("util");
-// const getAsync = promisify(client.get).bind(client);
 const setAsync = promisify(client.set).bind(client);
 
 const baseUrl = "https://jobs.github.com/positions.json";
@@ -43,7 +42,7 @@ async function fetchGithub() {
   console.log("filtered down to", jrJobs.length);
 
   // set in redis.
-  const success = await setAsync("github", JSON.stringify(allJobs));
+  const success = await setAsync("github", JSON.stringify(jrJobs));
 
   console.log({ success });
 }
