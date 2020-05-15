@@ -51,3 +51,21 @@ body {
   align-items: center;
   text-align: left;
 }
+
+.detail-logo {
+  float: right;
+  height: 30px;
+}
+
+.job:hover {
+  cursor: pointer;
+  color: #666666;
+}
+
+.job-company {
+  padding: 0 30px;
+}
+
+.job-dialog {
+  padding: 30px 50px;
+}
