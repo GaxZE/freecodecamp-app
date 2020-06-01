@@ -6,4 +6,4 @@ To start simply run:
 
 - `docker-compose up --build -d`
 
-To access the frontend at http://localhost:3000
+To access the frontend visit: http://localhost:3000
